@@ -151,3 +151,23 @@
 **Decisiones tomadas**: Ninguna arquitectural — configuración de entorno dev.
 
 **Próxima sesión**: Ejecutar migraciones SQL y smoke test.
+
+---
+
+## Sesión 006 — 2026-06-16
+
+**Foco**: Migraciones SQL — esquema de base de datos completo
+
+**Actividades**:
+- 0001_create_tenants.sql: tabla global public.tenants con índices
+- 0002_create_refresh_tokens.sql: tabla public.refresh_tokens (DEC-006: solo hash SHA-256)
+- 0003_create_tenant_schema_function.sql: función provision_tenant_schema() — crea schema completo por tenant (DEC-004)
+- Tablas por tenant: roles, permissions, role_permissions, users, user_roles
+- Roles de sistema por defecto: super_admin, admin, user
+- sqlx migrate run: 3 migraciones aplicadas OK
+- Smoke test provision_tenant_schema('tenant_test'): ✅ 5 tablas creadas
+- Feature "migrate" agregado a sqlx en infrastructure/Cargo.toml
+
+**Decisiones tomadas**: Ninguna nueva — implementación directa de DEC-002, DEC-004, DEC-005, DEC-006.
+
+**Próxima sesión**: valdhran-api — Axum app con endpoints de auth y tenant provisioning.

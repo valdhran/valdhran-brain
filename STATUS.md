@@ -9,7 +9,7 @@
 
 ## Próximos pasos
 - [x] Levantar Docker Compose y ejecutar migraciones (docker compose up -d)
-- [ ] Ejecutar migraciones SQL (run_migrations.sh)
+- [x] Ejecutar migraciones SQL (sqlx migrate run)
 - [ ] Probar endpoints con smoke_test.sh
 - [ ] Adquirir servidores Hetzner
 
@@ -21,6 +21,7 @@
         RefreshToken, ProvisionTenant, AssignRole)
   - [x] infrastructure: Argon2, JWT, PgTenantRepository, PgUserRepository,
         PgRoleRepository, AppConfig
+  - [x] migrations SQL: tenants, refresh_tokens, provision_tenant_schema() — aplicadas en local
   - [x] api:
     - POST /auth/login
     - POST /auth/refresh

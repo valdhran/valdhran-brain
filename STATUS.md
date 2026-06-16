@@ -8,11 +8,9 @@
    Pendiente: DB real levantada, RegisterUser, módulos ERP, dashboard.
 
 ## Próximos pasos
-- [ ] Levantar Docker Compose y ejecutar migraciones (docker compose up -d)
+- [x] Levantar Docker Compose y ejecutar migraciones (docker compose up -d)
+- [ ] Ejecutar migraciones SQL (run_migrations.sh)
 - [ ] Probar endpoints con smoke_test.sh
-- [ ] POST /tenants/:slug/users — registro de usuarios por tenant
-- [ ] Arrancar valdhran-modules: módulo Planillas PE
-- [ ] Arrancar valdhran-dashboard: Next.js skeleton + login
 - [ ] Adquirir servidores Hetzner
 
 ## Repos y estado
@@ -32,9 +30,18 @@
     - Middleware JWT (AuthClaims extractor)
     - Docker Compose PostgreSQL 16
     - Migraciones SQL + scripts
-- [ ] valdhran-modules (vacío — próximo: Planillas PE)
-- [ ] valdhran-dashboard (vacío — próximo: Next.js skeleton)
+- [x] valdhran-modules — Planillas PE iniciado
+- [x] valdhran-dashboard — Next.js skeleton + login
 - [ ] valdhran-web (vacío)
+
+## Entorno de desarrollo local
+
+- Docker Compose: `/home/rodri/valdhran-workspace/docker-compose.yml`
+- PostgreSQL: `localhost:5433` (puerto ajustado para evitar conflicto con servicios del sistema)
+- Container: `valdhran-postgres` (imagen `postgres:16-alpine`)
+- Credenciales dev: usuario `valdhran`, password `valdhran_dev`, db `valdhran`
+- `.env`: `/home/rodri/valdhran-workspace/valdhran-core/.env` (no versionado)
+- Estado: ✅ operativo — `docker compose up -d` desde workspace raíz
 
 ## Alertas para Perplexity
 _Ninguna._

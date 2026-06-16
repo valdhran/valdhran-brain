@@ -131,3 +131,23 @@
 - `57fcf92 feat(api): POST /tenants/:slug/users — registro de usuarios por tenant`
 - `b6b52dd feat(planillas-pe): entidades base — Trabajador, Concepto, regímenes PE`
 - `4c88f85 feat: Next.js skeleton — login page + API client`
+
+---
+
+## Sesión 005b — 2026-06-16
+
+**Foco**: Entorno de desarrollo local — Docker + PostgreSQL + .env
+
+**Actividades**:
+- Detección de puerto libre para PostgreSQL (5432 ocupado por servicio del sistema)
+- docker-compose.yml actualizado con puerto 5433
+- Container valdhran-postgres levantado y verificado (healthy)
+- Directorio valdraegorn-core renombrado a valdhran-core
+- .env creado en valdhran-core (no versionado)
+- .env.example creado en valdhran-core (versionado — plantilla)
+- cargo check -p valdhran-infrastructure: Finished `dev` profile in 0.62s
+- STATUS.md actualizado con sección de entorno local
+
+**Decisiones tomadas**: Ninguna arquitectural — configuración de entorno dev.
+
+**Próxima sesión**: Ejecutar migraciones SQL y smoke test.

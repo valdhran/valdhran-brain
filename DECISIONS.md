@@ -97,5 +97,6 @@
 | Título | Renombrado del proyecto: Valdraegorn → Valdhran |
 | Decisión | El proyecto cambia de nombre oficial de "Valdraegorn" a "Valdhran" |
 | Razonamiento | Mejor pronunciabilidad en español/LATAM (3 sílabas vs 4), nombre más contundente, mantiene la raíz Quenya VAL- (poder divino). La organización GitHub ya fue migrada a github.com/valdhran. |
-| Impacto | Todos los repos, documentación, referencias internas y URLs reflejan el nuevo nombre. |
+| Workspace local | /home/rodri/valdhran-workspace/ |
+| Impacto | Todos los repos, documentación, referencias internas, URLs y rutas locales reflejan el nuevo nombre. |
 | Estado | VIGENTE |

@@ -1,13 +1,14 @@
 # STATUS.md — Estado Actual de Valdhran
 
-> Última actualización: 2026-06-15
+> Última actualización: 2026-06-16
+> Workspace local: /home/rodri/valdhran-workspace/
 
 ## Estado general
 🟢 **FUNDACIÓN ACTIVA** — Arquitectura definida. Core Rust inicializado.
 
 ## Sesión activa
-- Fecha: 2026-06-15
-- Foco: Application layer + schema PostgreSQL base
+- Fecha: 2026-06-16
+- Foco: Renombrado completo del proyecto Valdraegorn → Valdhran
 
 ## Próximos pasos
 - [ ] Implementar infrastructure: Argon2PasswordHasher, JwtTokenService, PgTenantRepository, PgUserRepository, PgRoleRepository

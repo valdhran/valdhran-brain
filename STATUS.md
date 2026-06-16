@@ -8,22 +8,21 @@
 
 ## Sesión activa
 - Fecha: 2026-06-16
-- Foco: Renombrado completo del proyecto Valdraegorn → Valdhran
-- Estado: Repos GitHub renombrados (valdraegorn-* → valdhran-*), remotes locales sincronizados
+- Foco: Infrastructure layer — implementaciones concretas de ports
 
 ## Próximos pasos
-- [ ] Implementar infrastructure: Argon2PasswordHasher, JwtTokenService, PgTenantRepository, PgUserRepository, PgRoleRepository
-- [ ] Inicializar valdhran-api (Axum) con endpoints de auth: POST /auth/login, POST /auth/refresh
-- [ ] Provisioning dinámico de schema por tenant (CreateTenant completo)
+- [ ] Inicializar valdhran-api: Axum app + endpoints de auth (POST /auth/login, POST /auth/refresh, POST /tenants)
+- [ ] Integrar infrastructure con valdhran-api (inyección de dependencias)
 - [ ] Adquirir servidores Hetzner
+- [ ] Levantar PostgreSQL local para pruebas de integración
 
 ## Repos y estado
 - [x] valdhran-brain (https://github.com/valdhran/valdhran-brain)
 - [x] valdhran-core (https://github.com/valdhran/valdhran-core)
-  - [x] domain: Tenant, User, Role, Permission + value objects + repository traits
-  - [x] application: CreateTenant, RegisterUser, AuthenticateUser, RefreshToken, AssignRole
-  - [x] infrastructure: migrations SQL base (tenants global + schema por tenant)
-- [x] valdhran-api (vacío)
+  - [x] domain: entidades + value objects + repository traits
+  - [x] application: 5 casos de uso + ports (PasswordHasher, TokenService, RefreshTokenValidator)
+  - [x] infrastructure: Argon2, JWT, PgTenantRepository, PgUserRepository, PgRoleRepository, AppConfig, migrations SQL
+- [x] valdhran-api (vacío — próxima sesión)
 - [x] valdhran-modules (vacío)
 - [x] valdhran-dashboard (vacío)
 - [x] valdhran-web (vacío)

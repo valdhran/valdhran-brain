@@ -97,3 +97,21 @@
 **Workspace local:** /home/rodri/valdhran-workspace/
 
 **Próxima sesión:** Infrastructure layer — Argon2, JWT, repositorios PostgreSQL
+
+***
+
+## Sesión 006 — 2026-06-16
+
+**Foco:** Infrastructure layer — implementaciones concretas
+
+**Actividades:**
+- Argon2PasswordHasher: implementación del port PasswordHasher
+- JwtTokenService: implementación de TokenService + RefreshTokenValidator con rotación
+- Hash SHA-256 de refresh tokens antes de almacenar en BD (DEC-006)
+- PgTenantRepository, PgUserRepository, PgRoleRepository con SQLx
+- AppConfig: carga de configuración desde variables de entorno
+- cargo check -p valdhran-infrastructure OK
+
+**Decisiones tomadas:** Ninguna nueva — todas las implementaciones siguen decisiones previas.
+
+**Próxima sesión:** valdhran-api — Axum app con endpoints de auth y tenant provisioning.

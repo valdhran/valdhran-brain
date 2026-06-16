@@ -1,4 +1,4 @@
-# STATUS.md — Estado Actual de Valdraegorn
+# STATUS.md — Estado Actual de Valdhran
 
 > Última actualización: 2026-06-15
 
@@ -11,20 +11,20 @@
 
 ## Próximos pasos
 - [ ] Implementar infrastructure: Argon2PasswordHasher, JwtTokenService, PgTenantRepository, PgUserRepository, PgRoleRepository
-- [ ] Inicializar valdraegorn-api (Axum) con endpoints de auth: POST /auth/login, POST /auth/refresh
+- [ ] Inicializar valdhran-api (Axum) con endpoints de auth: POST /auth/login, POST /auth/refresh
 - [ ] Provisioning dinámico de schema por tenant (CreateTenant completo)
 - [ ] Adquirir servidores Hetzner
 
 ## Repos y estado
-- [x] valdraegorn-brain
-- [x] valdraegorn-core
+- [x] valdhran-brain (https://github.com/valdhran/valdraegorn-brain)
+- [x] valdhran-core (https://github.com/valdhran/valdraegorn-core)
   - [x] domain: Tenant, User, Role, Permission + value objects + repository traits
   - [x] application: CreateTenant, RegisterUser, AuthenticateUser, RefreshToken, AssignRole
   - [x] infrastructure: migrations SQL base (tenants global + schema por tenant)
-- [x] valdraegorn-api (vacío)
-- [x] valdraegorn-modules (vacío)
-- [x] valdraegorn-dashboard (vacío)
-- [x] valdraegorn-web (vacío)
+- [x] valdhran-api (vacío)
+- [x] valdhran-modules (vacío)
+- [x] valdhran-dashboard (vacío)
+- [x] valdhran-web (vacío)
 
 ## Alertas para Perplexity
 _Ninguna._

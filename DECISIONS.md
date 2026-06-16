@@ -85,3 +85,17 @@
 | Razonamiento | La rotación limita la ventana de ataque si un token es interceptado — solo puede usarse una vez. El hash en BD garantiza que una filtración de la tabla no expone tokens válidos. |
 | Alternativas descartadas | Refresh tokens estáticos sin rotación (descartado: si un token es robado, es válido indefinidamente hasta expiración) |
 | Estado | VIGENTE |
+
+***
+
+## DEC-007 — Renombrado del proyecto: Valdraegorn → Valdhran
+
+| Campo | Contenido |
+|-------|-----------|
+| ID | DEC-007 |
+| Fecha | 2026-06-16 |
+| Título | Renombrado del proyecto: Valdraegorn → Valdhran |
+| Decisión | El proyecto cambia de nombre oficial de "Valdraegorn" a "Valdhran" |
+| Razonamiento | Mejor pronunciabilidad en español/LATAM (3 sílabas vs 4), nombre más contundente, mantiene la raíz Quenya VAL- (poder divino). La organización GitHub ya fue migrada a github.com/valdhran. |
+| Impacto | Todos los repos, documentación, referencias internas y URLs reflejan el nuevo nombre. |
+| Estado | VIGENTE |

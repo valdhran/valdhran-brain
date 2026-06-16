@@ -1,10 +1,10 @@
-# ARCHITECTURE.md — Arquitectura de Valdraegorn
+# ARCHITECTURE.md — Arquitectura de Valdhran
 
 > Estado: BORRADOR — pendiente validación con Perplexity
 
 ## Visión general
 
-Valdraegorn es un ERP modular construido en Rust con IA nativa. Diseñado para ser:
+Valdhran es un ERP modular construido en Rust con IA nativa. Diseñado para ser:
 - **Multi-tenant** desde el diseño inicial
 - **Autoalojable** en servidores propios (Hetzner)
 - **AI-native**: LLM integrado para asistencia, alertas y análisis
@@ -14,11 +14,11 @@ Valdraegorn es un ERP modular construido en Rust con IA nativa. Diseñado para s
 
 | Repo | Rol |
 |------|-----|
-| `valdraegorn-core` | Motor principal: entidades, RBAC, workflows, multi-tenant |
-| `valdraegorn-api` | API HTTP (Axum) + gRPC — capa pública de acceso al core |
-| `valdraegorn-modules` | Módulos ERP por dominio (planillas PE, facturación, SUNAT, legal PE) |
-| `valdraegorn-dashboard` | UI TypeScript para operadores y clientes |
-| `valdraegorn-web` | Landing y portal público |
+| `valdhran-core` | Motor principal: entidades, RBAC, workflows, multi-tenant |
+| `valdhran-api` | API HTTP (Axum) + gRPC — capa pública de acceso al core |
+| `valdhran-modules` | Módulos ERP por dominio (planillas PE, facturación, SUNAT, legal PE) |
+| `valdhran-dashboard` | UI TypeScript para operadores y clientes |
+| `valdhran-web` | Landing y portal público |
 
 ## Stack técnico confirmado
 
@@ -40,7 +40,7 @@ Valdraegorn es un ERP modular construido en Rust con IA nativa. Diseñado para s
 - **Multi-tenant:** sí, desde el diseño inicial
 
 ## Integración con el ecosistema
-- **Khelvarion** (gestión de granjas) puede consumir módulos de facturación, clientes y pagos de Valdraegorn
+- **Khelvarion** (gestión de granjas) puede consumir módulos de facturación, clientes y pagos de Valdhran
 - **Zhinova** puede conectar sus bots al ERP vía API para consultas en lenguaje natural
 - Los módulos peruanos (planillas, SUNAT, legal) son reutilizables por todos los proyectos del ecosistema
 

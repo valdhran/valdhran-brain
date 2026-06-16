@@ -6,11 +6,11 @@
 
 ## Sesión 001 — 2026-06-15
 
-**Foco:** Inicialización del proyecto Valdraegorn
+**Foco:** Inicialización del proyecto Valdhran
 
 **Actividades:**
-- Creación de la organización GitHub `valdraegorn`
-- Inicialización del repo `valdraegorn-brain`
+- Creación de la organización GitHub `valdhran`
+- Inicialización del repo `valdhran-brain`
 - Creación de la estructura base de documentación: STATUS.md, DECISIONS.md, SESSIONS.md, docs/
 
 **Decisiones tomadas:** Ninguna técnica aún — pendiente debate con Perplexity
@@ -24,8 +24,8 @@
 **Foco:** Fundación del ERP — decisiones arquitectónicas y creación de repos
 
 **Actividades:**
-- Creación de 5 repos en la org GitHub `valdraegorn`
-- Inicialización de `valdraegorn-core` como Cargo workspace con arquitectura hexagonal
+- Creación de 5 repos en la org GitHub `valdhran`
+- Inicialización de `valdhran-core` como Cargo workspace con arquitectura hexagonal
 - Registro de DEC-001 a DEC-004 en DECISIONS.md
 
 **Decisiones tomadas:**
@@ -67,4 +67,26 @@
 **Decisiones tomadas:**
 - DEC-006: Refresh token rotation + solo hash en BD
 
-**Próxima sesión:** Infrastructure layer — implementar Argon2, JWT y repositorios PostgreSQL. Luego valdraegorn-api con Axum.
+**Próxima sesión:** Infrastructure layer — implementar Argon2, JWT y repositorios PostgreSQL. Luego valdhran-api con Axum.
+
+***
+
+## Sesión 005 — 2026-06-16
+
+**Foco:** Renombrado del proyecto
+
+**Actividades:**
+- Renombrado completo Valdraegorn → Valdhran
+- Actualización de todos los archivos de documentación (.md)
+- Actualización de Cargo.toml en todos los crates
+- Actualización de URLs GitHub: valdraegorn → valdhran
+- Registro de DEC-007 (renombrado del proyecto)
+
+**Decisiones tomadas:**
+- DEC-007: Renombrado Valdraegorn → Valdhran
+
+**Archivos modificados:**
+- Brain: STATUS.md, DECISIONS.md, SESSIONS.md, ARCHITECTURE.md, ROADMAP.md
+- Core: README.md, Cargo.toml (workspace + crates)
+
+**Próxima sesión:** Infrastructure layer — Argon2, JWT, repositorios PostgreSQL

@@ -7,17 +7,20 @@
 
 ## Sesión activa
 - Fecha: 2026-06-15
-- Foco: Entidades domain Rust + RBAC jerárquico
+- Foco: Application layer + schema PostgreSQL base
 
 ## Próximos pasos
-- [ ] Implementar casos de uso en application (CreateTenant, RegisterUser, AssignRole)
-- [ ] Implementar schema PostgreSQL base con migrations (SQLx)
-- [ ] Inicializar valdraegorn-api (Axum) con los primeros endpoints
+- [ ] Implementar infrastructure: Argon2PasswordHasher, JwtTokenService, PgTenantRepository, PgUserRepository, PgRoleRepository
+- [ ] Inicializar valdraegorn-api (Axum) con endpoints de auth: POST /auth/login, POST /auth/refresh
+- [ ] Provisioning dinámico de schema por tenant (CreateTenant completo)
 - [ ] Adquirir servidores Hetzner
 
 ## Repos y estado
 - [x] valdraegorn-brain
-- [x] valdraegorn-core — domain: entidades base implementadas (Tenant, User, Role, Permission)
+- [x] valdraegorn-core
+  - [x] domain: Tenant, User, Role, Permission + value objects + repository traits
+  - [x] application: CreateTenant, RegisterUser, AuthenticateUser, RefreshToken, AssignRole
+  - [x] infrastructure: migrations SQL base (tenants global + schema por tenant)
 - [x] valdraegorn-api (vacío)
 - [x] valdraegorn-modules (vacío)
 - [x] valdraegorn-dashboard (vacío)

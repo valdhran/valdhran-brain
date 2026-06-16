@@ -52,3 +52,19 @@
 - DEC-005: UUID v4 para todos los IDs de entidades
 
 **Próxima sesión:** Casos de uso en application crate (CreateTenant, RegisterUser, AssignRole) + schema PostgreSQL base con SQLx migrations
+
+***
+
+## Sesión 004 — 2026-06-15
+
+**Foco:** Application layer + schema PostgreSQL base
+
+**Actividades:**
+- Implementación de 5 casos de uso en crates/application: CreateTenant, RegisterUser, AuthenticateUser, RefreshToken, AssignRole
+- Definición de ports: PasswordHasher, TokenService, RefreshTokenValidator
+- Creación de migrations SQLx: tabla global tenants + plantilla schema por tenant (users, roles, permissions, role_permissions, user_roles, refresh_tokens)
+
+**Decisiones tomadas:**
+- DEC-006: Refresh token rotation + solo hash en BD
+
+**Próxima sesión:** Infrastructure layer — implementar Argon2, JWT y repositorios PostgreSQL. Luego valdraegorn-api con Axum.

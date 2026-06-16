@@ -71,3 +71,17 @@
 | Razonamiento | No predecible — un atacante no puede enumerar tenants, usuarios ni recursos por fuerza bruta. Esencial para un ERP con datos sensibles de múltiples empresas. |
 | Alternativas descartadas | i64 autoincrement (descartado: IDs predecibles, riesgo de enumeración); UUID v7 (descartado: complejidad adicional sin beneficio claro en esta etapa) |
 | Estado | VIGENTE |
+
+***
+
+## DEC-006 — Seguridad de refresh tokens
+
+| Campo | Contenido |
+|-------|-----------|
+| ID | DEC-006 |
+| Fecha | 2026-06-15 |
+| Título | Refresh token rotation + hash en BD |
+| Decisión | Los refresh tokens se rotan en cada uso (el token viejo se revoca al emitir uno nuevo). En BD solo se almacena el hash del token, nunca el token en claro. |
+| Razonamiento | La rotación limita la ventana de ataque si un token es interceptado — solo puede usarse una vez. El hash en BD garantiza que una filtración de la tabla no expone tokens válidos. |
+| Alternativas descartadas | Refresh tokens estáticos sin rotación (descartado: si un token es robado, es válido indefinidamente hasta expiración) |
+| Estado | VIGENTE |

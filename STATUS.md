@@ -8,21 +8,21 @@
 
 ## Sesión activa
 - Fecha: 2026-06-16
-- Foco: Infrastructure layer — implementaciones concretas de ports
+- Foco: valdhran-api — Axum HTTP layer con inyección de dependencias
 
 ## Próximos pasos
-- [ ] Inicializar valdhran-api: Axum app + endpoints de auth (POST /auth/login, POST /auth/refresh, POST /tenants)
-- [ ] Integrar infrastructure con valdhran-api (inyección de dependencias)
-- [ ] Adquirir servidores Hetzner
 - [ ] Levantar PostgreSQL local para pruebas de integración
+- [ ] Adquirir servidores Hetzner
+- [ ] Implementar middleware de autenticación JWT para rutas protegidas
+- [ ] Tests de integración para endpoints de auth
 
 ## Repos y estado
 - [x] valdhran-brain (https://github.com/valdhran/valdhran-brain)
 - [x] valdhran-core (https://github.com/valdhran/valdhran-core)
   - [x] domain: entidades + value objects + repository traits
-  - [x] application: 5 casos de uso + ports (PasswordHasher, TokenService, RefreshTokenValidator)
-  - [x] infrastructure: Argon2, JWT, PgTenantRepository, PgUserRepository, PgRoleRepository, AppConfig, migrations SQL
-- [x] valdhran-api (vacío — próxima sesión)
+  - [x] application: 5 casos de uso + ports
+  - [x] infrastructure: Argon2, JWT, repositorios PostgreSQL, AppConfig
+  - [x] api: Axum app — POST /auth/login, POST /auth/refresh, POST /tenants
 - [x] valdhran-modules (vacío)
 - [x] valdhran-dashboard (vacío)
 - [x] valdhran-web (vacío)

@@ -115,3 +115,21 @@
 **Decisiones tomadas:** Ninguna nueva — todas las implementaciones siguen decisiones previas.
 
 **Próxima sesión:** valdhran-api — Axum app con endpoints de auth y tenant provisioning.
+
+***
+
+## Sesión 007 — 2026-06-16
+
+**Foco:** valdhran-api — Axum HTTP layer con inyección de dependencias
+
+**Actividades:**
+- Crate valdhran-api inicializado (Axum + Tokio)
+- AppState con use cases inyectados via Arc
+- Handlers: POST /auth/login, POST /auth/refresh, POST /tenants
+- Mapeo DomainError → HTTP status codes (errors.rs)
+- Derivar Clone para PgTenantRepository
+- cargo check -p valdhran-api OK
+
+**Decisiones tomadas:** Ninguna nueva — arquitectura sigue DEC-001 hexagonal con inyección de dependencias en AppState.
+
+**Próxima sesión:** PostgreSQL local + pruebas de integración de endpoints.

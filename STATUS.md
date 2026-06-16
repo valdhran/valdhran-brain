@@ -9,6 +9,7 @@
 ## Sesión activa
 - Fecha: 2026-06-16
 - Foco: Renombrado completo del proyecto Valdraegorn → Valdhran
+- Estado: Repos GitHub renombrados (valdraegorn-* → valdhran-*), remotes locales sincronizados
 
 ## Próximos pasos
 - [ ] Implementar infrastructure: Argon2PasswordHasher, JwtTokenService, PgTenantRepository, PgUserRepository, PgRoleRepository
@@ -17,8 +18,8 @@
 - [ ] Adquirir servidores Hetzner
 
 ## Repos y estado
-- [x] valdhran-brain (https://github.com/valdhran/valdraegorn-brain)
-- [x] valdhran-core (https://github.com/valdhran/valdraegorn-core)
+- [x] valdhran-brain (https://github.com/valdhran/valdhran-brain)
+- [x] valdhran-core (https://github.com/valdhran/valdhran-core)
   - [x] domain: Tenant, User, Role, Permission + value objects + repository traits
   - [x] application: CreateTenant, RegisterUser, AuthenticateUser, RefreshToken, AssignRole
   - [x] infrastructure: migrations SQL base (tenants global + schema por tenant)

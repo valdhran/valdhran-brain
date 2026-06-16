@@ -3,6 +3,7 @@
 ## ✅ Completado
 
 - **Sesión 005**: Renombrado de proyecto Valdraegorn → Valdhran
+- **Sesión 006**: Crate `valdhran-infrastructure` — Argon2, JWT, repos PostgreSQL
 - **Sesión 007**: Crate `valdhran-api` con Axum — endpoints auth + tenants
 - **Sesión 008**: Middleware JWT + infraestructura local
   - AuthClaims extractor (FromRequestParts)

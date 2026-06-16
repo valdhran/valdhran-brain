@@ -99,3 +99,35 @@
 **Próxima sesión**: Levantar Docker + ejecutar migraciones + smoke test real.
 
 **Commit**: `7e8928b feat(api): GET /graphify — grafo de dependencias del workspace Rust`
+
+---
+
+## Sesión 010 — 2026-06-16
+
+**Foco**: Sincronización brain + RegisterUser endpoint + estructura módulos ERP
+
+**Actividades**:
+- STATUS.md y SESSIONS.md sincronizados con estado real del proyecto
+- POST /tenants/:slug/users — registro de usuario en tenant
+  - Handler resuelve tenant por slug, crea PgUserRepository con schema del tenant
+  - Ejecuta RegisterUserUseCase con repo específico + Argon2PasswordHasher
+  - Valida tenant existe (404 si no), email único por tenant
+- Estructura inicial valdhran-modules (Planillas PE):
+  - Trabajador: DNI, nombres, cargo, sueldo, régimen laboral, sistema pensionario
+  - Concepto: conceptos de planilla según SUNAT PLAME
+- Skeleton valdhran-dashboard (Next.js):
+  - lib/api.ts: apiFetch helper + login()
+  - app/login/page.tsx: formulario autenticación
+  - app/dashboard/page.tsx: placeholder dashboard
+- cargo check -p valdhran-api OK
+- cargo check (modules) OK  
+- npx tsc --noEmit (dashboard) OK
+
+**Decisiones tomadas**: Ninguna nueva.
+
+**Próxima sesión**: Docker up + migraciones + smoke test real.
+
+**Commits**:
+- `57fcf92 feat(api): POST /tenants/:slug/users — registro de usuarios por tenant`
+- `b6b52dd feat(planillas-pe): entidades base — Trabajador, Concepto, regímenes PE`
+- `4c88f85 feat: Next.js skeleton — login page + API client`

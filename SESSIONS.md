@@ -35,3 +35,20 @@
 - DEC-004: Schema-per-tenant para aislamiento total entre clientes
 
 **Próxima sesión:** Implementar entidades base del domain: Tenant, User, Role, Permission
+
+***
+
+## Sesión 003 — 2026-06-15
+
+**Foco:** Entidades base del domain Rust
+
+**Actividades:**
+- Implementación de entidades: Tenant, User, Role, Permission
+- Implementación de value objects: Email, TenantSlug
+- Definición de traits de repositorio: TenantRepository, UserRepository, RoleRepository
+- Registro de DEC-005 (UUID v4)
+
+**Decisiones tomadas:**
+- DEC-005: UUID v4 para todos los IDs de entidades
+
+**Próxima sesión:** Casos de uso en application crate (CreateTenant, RegisterUser, AssignRole) + schema PostgreSQL base con SQLx migrations

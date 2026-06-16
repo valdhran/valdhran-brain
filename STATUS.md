@@ -7,23 +7,21 @@
 
 ## Sesión activa
 - Fecha: 2026-06-15
-- Foco: Creación de repos y estructura base del core Rust
+- Foco: Entidades domain Rust + RBAC jerárquico
 
 ## Próximos pasos
-- [ ] Implementar entidades base en domain (Tenant, User, Role)
-- [ ] Implementar RBAC jerárquico en domain
-- [ ] Crear schema PostgreSQL base con migrations (SQLx)
-- [ ] Inicializar valdraegorn-api (Axum)
+- [ ] Implementar casos de uso en application (CreateTenant, RegisterUser, AssignRole)
+- [ ] Implementar schema PostgreSQL base con migrations (SQLx)
+- [ ] Inicializar valdraegorn-api (Axum) con los primeros endpoints
 - [ ] Adquirir servidores Hetzner
-- [ ] Decidir framework frontend: Next.js (DEC-003 vigente)
 
-## Repos creados
-- [x] valdraegorn-brain (fuente de verdad)
-- [x] valdraegorn-core (Cargo workspace, arquitectura hexagonal)
-- [x] valdraegorn-api
-- [x] valdraegorn-modules
-- [x] valdraegorn-dashboard
-- [x] valdraegorn-web
+## Repos y estado
+- [x] valdraegorn-brain
+- [x] valdraegorn-core — domain: entidades base implementadas (Tenant, User, Role, Permission)
+- [x] valdraegorn-api (vacío)
+- [x] valdraegorn-modules (vacío)
+- [x] valdraegorn-dashboard (vacío)
+- [x] valdraegorn-web (vacío)
 
 ## Alertas para Perplexity
 _Ninguna._

@@ -57,3 +57,17 @@
 | Razonamiento | Aislamiento total de datos por cliente. Una vulnerabilidad en un tenant no puede exponer datos de otro. Crítico para un ERP que maneja planillas, datos financieros y legales de empresas distintas. |
 | Alternativas descartadas | Row-level con tenant_id (descartado: riesgo de filtración de datos entre tenants si hay un bug en queries; inaceptable para ERP con datos sensibles) |
 | Estado | VIGENTE |
+
+***
+
+## DEC-005 — Identificadores de entidades
+
+| Campo | Contenido |
+|-------|-----------|
+| ID | DEC-005 |
+| Fecha | 2026-06-15 |
+| Título | UUID v4 para todos los IDs |
+| Decisión | Todas las entidades usan UUID v4 como identificador primario |
+| Razonamiento | No predecible — un atacante no puede enumerar tenants, usuarios ni recursos por fuerza bruta. Esencial para un ERP con datos sensibles de múltiples empresas. |
+| Alternativas descartadas | i64 autoincrement (descartado: IDs predecibles, riesgo de enumeración); UUID v7 (descartado: complejidad adicional sin beneficio claro en esta etapa) |
+| Estado | VIGENTE |

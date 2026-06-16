@@ -79,3 +79,23 @@
 - `AppConfig` — carga configuración desde variables de entorno
 
 **Commit**: `ea8569a feat(infrastructure): Argon2, JWT, repositorios PostgreSQL, AppConfig`
+
+---
+
+## Sesión 009 — 2026-06-16
+
+**Foco**: Endpoint GET /graphify — grafo de dependencias del workspace
+
+**Actividades**:
+- GET /graphify: escanea el Cargo workspace y retorna nodos + aristas en JSON
+- Ignora assets binarios: png, svg, jpg, gif, ico, woff, woff2, ttf, pdf, zip
+- Ignora directorios: target, .git, node_modules
+- Detecta dependencias internas vs externas entre crates
+- Retorna stats: total_crates, total_dependencies, internal_dependencies, files_scanned
+- cargo check -p valdhran-api OK
+
+**Decisiones tomadas**: Ninguna nueva.
+
+**Próxima sesión**: Levantar Docker + ejecutar migraciones + smoke test real.
+
+**Commit**: `7e8928b feat(api): GET /graphify — grafo de dependencias del workspace Rust`

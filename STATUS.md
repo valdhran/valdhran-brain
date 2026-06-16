@@ -9,6 +9,7 @@
   - AuthClaims extractor (FromRequestParts)
   - Migraciones SQL (tenants + provision_tenant_schema)
   - Docker Compose + scripts smoke_test + run_migrations
+- **Sesión 009**: Endpoint GET /graphify — grafo de dependencias del workspace
 
 ## 🚧 En progreso
 
@@ -16,6 +17,7 @@ Nada actualmente.
 
 ## 📋 Pendiente
 
+- [ ] Probar GET /graphify contra el workspace local
 - Implementar handlers completos (auth, tenants)
 - Tests de integración con PostgreSQL
 - Deploy scripts

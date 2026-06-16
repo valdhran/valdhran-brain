@@ -16,3 +16,22 @@
 **Decisiones tomadas:** Ninguna técnica aún — pendiente debate con Perplexity
 
 **Próxima sesión:** Definir arquitectura del core Rust (DEC-001) y ORM (DEC-002)
+
+***
+
+## Sesión 002 — 2026-06-15
+
+**Foco:** Fundación del ERP — decisiones arquitectónicas y creación de repos
+
+**Actividades:**
+- Creación de 5 repos en la org GitHub `valdraegorn`
+- Inicialización de `valdraegorn-core` como Cargo workspace con arquitectura hexagonal
+- Registro de DEC-001 a DEC-004 en DECISIONS.md
+
+**Decisiones tomadas:**
+- DEC-001: Arquitectura hexagonal (domain / application / infrastructure)
+- DEC-002: SQLx sobre SeaORM
+- DEC-003: Next.js para el dashboard
+- DEC-004: Schema-per-tenant para aislamiento total entre clientes
+
+**Próxima sesión:** Implementar entidades base del domain: Tenant, User, Role, Permission

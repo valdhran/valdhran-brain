@@ -171,3 +171,26 @@
 **Decisiones tomadas**: Ninguna nueva — implementación directa de DEC-002, DEC-004, DEC-005, DEC-006.
 
 **Próxima sesión**: valdhran-api — Axum app con endpoints de auth y tenant provisioning.
+
+---
+
+## Sesión 007 — 2026-06-16
+
+**Foco**: valdhran-api — Axum HTTP API, capa de entrada
+
+**Actividades**:
+- Crate valdhran-api creado con binario `valdhran-api`
+- AppState: PgPool + AppConfig + Argon2PasswordHasher + JwtTokenService (Arc compartido)
+- ApiError: mapeo DomainError → HTTP status codes
+- Handlers implementados:
+  - POST /tenants → create_tenant + provision_tenant_schema()
+  - POST /auth/register → register_user
+  - POST /auth/login → authenticate_user + persistir refresh_token hash en BD
+  - POST /auth/refresh → refresh_token + rotación en BD (DEC-006)
+  - POST /auth/logout → revocar refresh_token en BD
+- cargo check --workspace: ✅
+- Smoke test end-to-end: ✅ (5 endpoints verificados con curl)
+
+**Decisiones tomadas**: Ninguna nueva — implementación directa de arquitectura hexagonal (DEC-001).
+
+**Próxima sesión**: Por definir — candidatos: middleware de autenticación JWT, tests de integración, o primer módulo ERP.

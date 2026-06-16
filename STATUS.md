@@ -4,14 +4,13 @@
 > Workspace local: /home/rodri/valdhran-workspace/
 
 ## Estado general
-🟢 **CORE COMPLETO** — API Rust funcional. Auth + tenants + graphify listos.
-   Pendiente: DB real levantada, RegisterUser, módulos ERP, dashboard.
+🟢 **CORE COMPLETO** — API Rust funcional y verificada. Auth + tenants operativos.
 
 ## Próximos pasos
-- [x] Levantar Docker Compose y ejecutar migraciones (docker compose up -d)
-- [x] Ejecutar migraciones SQL (sqlx migrate run)
-- [ ] Probar endpoints con smoke_test.sh
+- [ ] Middleware de autenticación JWT (extractor de claims para rutas protegidas)
+- [ ] Tests de integración (auth flow completo)
 - [ ] Adquirir servidores Hetzner
+- [ ] Primer módulo ERP: definir cuál (planillas PE, facturación SUNAT, u otro)
 
 ## Repos y estado
 - [x] valdhran-brain
@@ -22,15 +21,12 @@
   - [x] infrastructure: Argon2, JWT, PgTenantRepository, PgUserRepository,
         PgRoleRepository, AppConfig
   - [x] migrations SQL: tenants, refresh_tokens, provision_tenant_schema() — aplicadas en local
-  - [x] api:
+  - [x] api: Axum HTTP API — 5 endpoints de auth y tenant provisioning operativos
+    - POST /tenants → create + provision schema
+    - POST /auth/register
     - POST /auth/login
     - POST /auth/refresh
-    - POST /tenants
-    - POST /tenants/:slug/users  ← sesión 010
-    - GET  /graphify
-    - Middleware JWT (AuthClaims extractor)
-    - Docker Compose PostgreSQL 16
-    - Migraciones SQL + scripts
+    - POST /auth/logout
 - [x] valdhran-modules — Planillas PE iniciado
 - [x] valdhran-dashboard — Next.js skeleton + login
 - [ ] valdhran-web (vacío)

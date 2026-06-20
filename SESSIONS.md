@@ -71,7 +71,7 @@
 **Realizado**:
 - `Argon2PasswordHasher` — implementa port `PasswordHasher`
 - `JwtTokenService` — implementa ports `TokenService` + `RefreshTokenValidator`
-  - Hash SHA-256 de refresh tokens (DEC-006)
+  - Hash SHA-256 de refresh tokens ([DEC-006](DECISIONS.md#dec-006))
 - Repositorios PostgreSQL con SQLx:
   - `PgTenantRepository`
   - `PgUserRepository`
@@ -107,7 +107,7 @@
 **Foco**: Sincronización brain + RegisterUser endpoint + estructura módulos ERP
 
 **Actividades**:
-- STATUS.md y SESSIONS.md sincronizados con estado real del proyecto
+- [STATUS.md](STATUS.md) y [SESSIONS.md](SESSIONS.md) sincronizados con estado real del proyecto
 - POST /tenants/:slug/users — registro de usuario en tenant
   - Handler resuelve tenant por slug, crea PgUserRepository con schema del tenant
   - Ejecuta RegisterUserUseCase con repo específico + Argon2PasswordHasher
@@ -146,7 +146,7 @@
 - .env creado en valdhran-core (no versionado)
 - .env.example creado en valdhran-core (versionado — plantilla)
 - cargo check -p valdhran-infrastructure: Finished `dev` profile in 0.62s
-- STATUS.md actualizado con sección de entorno local
+- [STATUS.md](STATUS.md) actualizado con sección de entorno local
 
 **Decisiones tomadas**: Ninguna arquitectural — configuración de entorno dev.
 
@@ -160,15 +160,15 @@
 
 **Actividades**:
 - 0001_create_tenants.sql: tabla global public.tenants con índices
-- 0002_create_refresh_tokens.sql: tabla public.refresh_tokens (DEC-006: solo hash SHA-256)
-- 0003_create_tenant_schema_function.sql: función provision_tenant_schema() — crea schema completo por tenant (DEC-004)
+- 0002_create_refresh_tokens.sql: tabla public.refresh_tokens ([DEC-006](DECISIONS.md#dec-006): solo hash SHA-256)
+- 0003_create_tenant_schema_function.sql: función provision_tenant_schema() — crea schema completo por tenant ([DEC-004](DECISIONS.md#dec-004))
 - Tablas por tenant: roles, permissions, role_permissions, users, user_roles
 - Roles de sistema por defecto: super_admin, admin, user
 - sqlx migrate run: 3 migraciones aplicadas OK
 - Smoke test provision_tenant_schema('tenant_test'): ✅ 5 tablas creadas
 - Feature "migrate" agregado a sqlx en infrastructure/Cargo.toml
 
-**Decisiones tomadas**: Ninguna nueva — implementación directa de DEC-002, DEC-004, DEC-005, DEC-006.
+**Decisiones tomadas**: Ninguna nueva — implementación directa de [DEC-002](DECISIONS.md#dec-002), [DEC-004](DECISIONS.md#dec-004), [DEC-005](DECISIONS.md#dec-005), [DEC-006](DECISIONS.md#dec-006).
 
 **Próxima sesión**: valdhran-api — Axum app con endpoints de auth y tenant provisioning.
 
@@ -186,11 +186,28 @@
   - POST /tenants → create_tenant + provision_tenant_schema()
   - POST /auth/register → register_user
   - POST /auth/login → authenticate_user + persistir refresh_token hash en BD
-  - POST /auth/refresh → refresh_token + rotación en BD (DEC-006)
+  - POST /auth/refresh → refresh_token + rotación en BD ([DEC-006](DECISIONS.md#dec-006))
   - POST /auth/logout → revocar refresh_token en BD
 - cargo check --workspace: ✅
 - Smoke test end-to-end: ✅ (5 endpoints verificados con curl)
 
-**Decisiones tomadas**: Ninguna nueva — implementación directa de arquitectura hexagonal (DEC-001).
+**Decisiones tomadas**: Ninguna nueva — implementación directa de arquitectura hexagonal ([DEC-001](DECISIONS.md#dec-001)).
 
 **Próxima sesión**: Por definir — candidatos: middleware de autenticación JWT, tests de integración, o primer módulo ERP.
+
+---
+
+## Sesión 011 — 2026-06-20
+
+**Foco**: Sistema de referencias cruzadas navegables en documentación
+
+**Actividades**:
+- Auditoría de referencias sueltas en [SESSIONS.md](SESSIONS.md), [STATUS.md](STATUS.md), [DECISIONS.md](DECISIONS.md)
+- Corrección de todas las menciones DEC-NNN a formato link `[DEC-NNN](DECISIONS.md#dec-nnn)`
+- Script `scripts/validate-references.sh` — detecta referencias sueltas, exit 1 en CI
+- Estándar documentado en [README.md](README.md)
+- validate-references.sh ejecutado: ✅ 0 referencias sueltas
+
+**Decisiones tomadas**: Ninguna nueva — mejora de calidad de documentación.
+
+**Próxima sesión**: Middleware JWT + primer módulo ERP.

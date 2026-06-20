@@ -20,6 +20,7 @@ done < <(grep -rn "DEC-[0-9]\{3\}" "$REPO_ROOT"/*.md 2>/dev/null \
     | grep -v "^\s*#" \
     | grep -v "\[DEC-" \
     | grep -v "^.*DECISIONS\.md:" \
+    | grep -v '`' \
     || true)
 
 # 2. Detectar nombres de archivos .md sin formato link

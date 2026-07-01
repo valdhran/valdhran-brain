@@ -19,11 +19,13 @@ timestamp: 2026-06-30
 | [ARCHITECTURE.md](ARCHITECTURE.md) | architecture, rust, erp, multi-tenant |
 | [ROADMAP.md](ROADMAP.md) | roadmap, planning, phases |
 
-### `runbook` — Protocolos y procedimientos (0)
+### `runbook` — Protocolos y procedimientos (2)
 | Archivo | Tags |
 |---|---|
+| [AGENTS-PROTOCOL.md](AGENTS-PROTOCOL.md) | protocol, agents, perplexity, claude-code |
+| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | troubleshooting, errors, debugging, runbook |
 
-### `reference` — Configuración y registros (3)
+### `reference` — Configuración y registros (4)
 | Archivo | Tags |
 |---|---|
 | [DECISIONS.md](DECISIONS.md) | decisions |
@@ -39,10 +41,10 @@ timestamp: 2026-06-30
 ---
 
 ## Estadísticas
-- **Total archivos**: 6
+- **Total archivos**: 9
 - **Tipo `concept`**: 2
-- **Tipo `runbook`**: 0
-- **Tipo `reference`**: 3
+- **Tipo `runbook`**: 2
+- **Tipo `reference`**: 4
 - **Tipo `log`**: 1
 
 ---
